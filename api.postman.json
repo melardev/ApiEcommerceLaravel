@@ -1,0 +1,926 @@
+{
+	"info": {
+		"_postman_id": "71406283-ae89-4673-bd1f-59bcb2389cc6",
+		"name": "Laravel Api Shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"postman\",\n    \"password\": \"password\",\n    \"password_confirmation\": \"password\",\n    \"email\": \"postman@laravel.com\",\n    \"first_name\": \"post\",\n    \"last_name\": \"man\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/api/users",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"postman\",\n    \"password\": \"password\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login As admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"password\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/api/users/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "Get products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwb3N0bWFuIiwiaWF0IjoxNTQ2MTIzMjA1LCJleHAiOjE1NDYyMDk2MDV9.3EH278UUAfEg_1wTpzHy-iCRRRyC0CDKGMEBmPJ4ueHV0Yl5_glDZgZfSb9mZsgRXqKlq4RmOzjQ8WyrHZFoGQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/api/products",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get product details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/api/products/cool-productas",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"cool-productas"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get products by tag",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwb3N0bWFuIiwiaWF0IjoxNTQ2MTIzMjA1LCJleHAiOjE1NDYyMDk2MDV9.3EH278UUAfEg_1wTpzHy-iCRRRyC0CDKGMEBmPJ4ueHV0Yl5_glDZgZfSb9mZsgRXqKlq4RmOzjQ8WyrHZFoGQ"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/api/products/by_tag/modi",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"by_tag",
+								"modi"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Products",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODA4MFwvYXBpXC91c2Vyc1wvbG9naW4iLCJpYXQiOjE1NTA0MDg1NDMsImV4cCI6MTU1MDQxMjE0MywibmJmIjoxNTUwNDA4NTQzLCJqdGkiOiJYVGRPclhOSEw3OXhpSnBLIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3IiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iXX0.3_hLzWMtLnEHaZe5LySbRkKQl81AtfD_CLu6iKLE9KM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images[]",
+									"type": "file",
+									"src": ""
+								},
+								{
+									"key": "name",
+									"value": "Cool Products",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "go buy it",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "200.00",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "tags[yellow]",
+									"value": "yellow is cool",
+									"type": "text"
+								},
+								{
+									"key": "categories[sales]",
+									"value": "In Sale!!",
+									"type": "text"
+								},
+								{
+									"key": "tags[pink]",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/api/products",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "Get my orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODA4MFwvYXBpXC91c2Vyc1wvbG9naW4iLCJpYXQiOjE1NTAxMDE1MzgsImV4cCI6MTU1MDEwNTEzOCwibmJmIjoxNTUwMTAxNTM4LCJqdGkiOiJZQ0lwMGFJRllHWGR3TW9EIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3IiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iXX0.0E59Q1Ib0cVUZzqZIeuT05nDT_lK04BfTzcWMEK90eE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/api/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create order authenticated reused address",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODA4MFwvYXBpXC91c2Vyc1wvbG9naW4iLCJpYXQiOjE1NTA0MDg1NDMsImV4cCI6MTU1MDQxMjE0MywibmJmIjoxNTUwNDA4NTQzLCJqdGkiOiJYVGRPclhOSEw3OXhpSnBLIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3IiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iXX0.3_hLzWMtLnEHaZe5LySbRkKQl81AtfD_CLu6iKLE9KM"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"address_id\": 9,\n\t\"cart_items\": [\n\t\t{\n\t\t\t\"id\": 56,\n\t\t\t\"quantity\": 3\n\t\t},\n\t\t{\n\t\t\t\"id\": 54,\n\t\t\t\"quantity\": 5\n\t\t}]\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/api/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get order details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODA4MFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU1MDA4NzUxNywiZXhwIjoxNTUwMDkxMTE3LCJuYmYiOjE1NTAwODc1MTcsImp0aSI6ImJrbElZbFJXSDZOeENvdGQiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdfQ.13P5YckGj1RiDF3Rgl6BY4dsP4Hch03yuE33qo0V_mk"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/api/orders/40",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders",
+								"40"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create order new address",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODA4MFwvYXBpXC91c2Vyc1wvbG9naW4iLCJpYXQiOjE1NTAwOTgzODUsImV4cCI6MTU1MDEwMTk4NSwibmJmIjoxNTUwMDk4Mzg1LCJqdGkiOiI0bU5WRko5VHpUbXp2Q2txIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3IiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iXX0.d0KwHfdHRvFB9wf58AmQidTCnXaUmQsqSUmREu4dISo"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"card_number\": \"122-122\",\n\t\"first_name\": \"post\",\n\t\"last_name\": \"man\",\n\t\"address\": \"some street address\",\n\t\"city\": \"some city\",\n\t\"country\": \"some country\",\n\t\"phone_number\": \"990-2901-2\",\n\t\"zip_code\": \"some zipcode thing\",\n\t\t\"cart_items\": [\n\t\t{\n\t\t\t\"id\": 56,\n\t\t\t\"quantity\": 3\n\t\t},\n\t\t{\n\t\t\t\"id\": 58,\n\t\t\t\"quantity\": 5\n\t\t}]\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/api/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create order new address Guest",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"card_number\": \"122-122\",\n\t\"first_name\": \"post\",\n\t\"last_name\": \"man\",\n\t\"address\": \"some street address\",\n\t\"city\": \"some city\",\n\t\"country\": \"some country\",\n\t\"phone_number\": \"990-2901-2\",\n\t\"zip_code\": \"some zipcode thing\",\n\t\t\"cart_items\": [\n\t\t{\n\t\t\t\"id\": 56,\n\t\t\t\"quantity\": 3\n\t\t},\n\t\t{\n\t\t\t\"id\": 58,\n\t\t\t\"quantity\": 5\n\t\t}]\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/api/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comments",
+			"item": [
+				{
+					"name": "Get comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/api/products/cool-productas/comments",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"cool-productas",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODA4MFwvYXBpXC91c2Vyc1wvbG9naW4iLCJpYXQiOjE1NTA0MDg1NDMsImV4cCI6MTU1MDQxMjE0MywibmJmIjoxNTUwNDA4NTQzLCJqdGkiOiJYVGRPclhOSEw3OXhpSnBLIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3IiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iXX0.3_hLzWMtLnEHaZe5LySbRkKQl81AtfD_CLu6iKLE9KM",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"content\": \"cool article\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/api/products/cool-productas/comments",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"cool-productas",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete comment",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODA4MFwvYXBpXC91c2Vyc1wvbG9naW4iLCJpYXQiOjE1NTAwOTM1NTMsImV4cCI6MTU1MDA5NzE1MywibmJmIjoxNTUwMDkzNTUzLCJqdGkiOiJ2eTA5UlN5dzNVb0QyTTVaIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3IiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iXX0.y0GC74wLPL2Os3LLccXLQngZXTUBlQ3RXUN4mVrIkw8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/api/products/quos-ea-aut-totam-tempora-voluptatem-illum-doloremque/comments/73",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"quos-ea-aut-totam-tempora-voluptatem-illum-doloremque",
+								"comments",
+								"73"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update comment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZXhwIjoxNTUyMTU1ODEyLCJlbWFpbCI6ImFkbWluQHJvcl9zaG9wX2FwaS5jb20iLCJ1c2VybmFtZSI6ImFkbWluIn0.Hst39QvRBF_yOLG5OLLoKxhSsyxihQTAUnKudj-u5ao"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"content\": \"cool article 333\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/products/et-ut-dolor-et/comments/24",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"et-ut-dolor-et",
+								"comments",
+								"24"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tags and Categories",
+			"item": [
+				{
+					"name": "Get tags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/api/tags",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Tag",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Bearer",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODA4MFwvYXBpXC91c2Vyc1wvbG9naW4iLCJpYXQiOjE1NTAwOTM1NTMsImV4cCI6MTU1MDA5NzE1MywibmJmIjoxNTUwMDkzNTUzLCJqdGkiOiJ2eTA5UlN5dzNVb0QyTTVaIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3IiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iXX0.y0GC74wLPL2Os3LLccXLQngZXTUBlQ3RXUN4mVrIkw8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "post",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "man",
+									"type": "text"
+								},
+								{
+									"key": "images[]",
+									"type": "file",
+									"src": ""
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/api/tags",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/api/categories",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "post",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "man",
+									"type": "text"
+								},
+								{
+									"key": "images[]",
+									"type": "file",
+									"src": ""
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/api/categories",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "static",
+			"item": [
+				{
+					"name": "Get Image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/storage/tags/noTJ3twqL4Iqf98FRhjUNKDn591nTBnP93q0x7b9.png",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"storage",
+								"tags",
+								"noTJ3twqL4Iqf98FRhjUNKDn591nTBnP93q0x7b9.png"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pages",
+			"item": [
+				{
+					"name": "Home",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/api",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "addresses",
+			"item": [
+				{
+					"name": "My Addresses",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODA4MFwvYXBpXC91c2Vyc1wvbG9naW4iLCJpYXQiOjE1NTA0MDg1NDMsImV4cCI6MTU1MDQxMjE0MywibmJmIjoxNTUwNDA4NTQzLCJqdGkiOiJYVGRPclhOSEw3OXhpSnBLIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3IiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iXX0.3_hLzWMtLnEHaZe5LySbRkKQl81AtfD_CLu6iKLE9KM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"postman\",\n    \"password\": \"password\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/api/addresses",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
