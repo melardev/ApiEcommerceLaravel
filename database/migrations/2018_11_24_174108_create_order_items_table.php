@@ -16,17 +16,17 @@ class CreateOrderItemsTable extends Migration
         Schema::create('order_items', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('order_id')->unsigned()->nullable(false);
+            $table->unsignedInteger('order_id')->nullable(false);
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
 
-            $table->integer('product_id')->unsigned()->nullable(false);
+            $table->unsignedInteger('product_id')->nullable(false);
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
 
             $table->string('name');
             $table->string('slug');
 
-            $table->integer('quantity')->unsigned();
-            $table->decimal('price')->unsigned();
+            $table->unsignedInteger('quantity');
+            $table->decimal('price');
             $table->timestamps();
         });
     }

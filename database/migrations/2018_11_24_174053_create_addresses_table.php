@@ -23,7 +23,7 @@ class CreateAddressesTable extends Migration
             $table->text('address');
             $table->text('zip_code');
             $table->text('phone_number');
-            $table->integer('user_id')->unsigned()->nullable();
+            $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
 

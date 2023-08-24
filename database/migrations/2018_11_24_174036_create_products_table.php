@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->unsignedInteger('stock');
             $table->unsignedDecimal('price');
-            $table->string('slug')->unique();
+            $table->string('slug');
             $table->datetime('publish_on');
             $table->timestamps();
         });

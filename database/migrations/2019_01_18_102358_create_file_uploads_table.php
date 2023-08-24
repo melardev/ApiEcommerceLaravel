@@ -20,19 +20,28 @@ class CreateFileUploadsTable extends Migration
             $table->string('file_name');
             $table->string('file_path');
             $table->string('original_name');
-            $table->integer('file_size')->nullable();
+            $table->unsignedInteger('file_size')->nullable();
 
-            $table->integer('tag_id')->unsigned()->nullable();
+            $table->unsignedInteger('tag_id')->nullable();
             $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
 
-            $table->integer('category_id')->unsigned()->nullable();
+            $table->unsignedInteger('category_id')->nullable();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
 
-            $table->integer('product_id')->unsigned()->nullable();
+            $table->unsignedInteger('product_id')->nullable();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
 
-            $table->integer('user_id')->unsigned()->nullable();
+            $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
+            $table->timestamps();
+        });
+        Schema::create('products_categories', function (Blueprint $table) {
+            $table->unsignedInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('products');
+
+            $table->unsignedInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
 
             $table->timestamps();
         });
@@ -46,5 +55,6 @@ class CreateFileUploadsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('file_uploads');
+        Schema::dropIfExists('products_categories');
     }
 }

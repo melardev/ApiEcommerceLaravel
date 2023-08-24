@@ -17,7 +17,7 @@ class CreateTagsTable extends Migration
             $table->increments('id');
 
             $table->string('name');
-            $table->string('slug')->unique();
+            $table->string('slug');
 
             $table->string('description')->nullable();
 
@@ -25,10 +25,10 @@ class CreateTagsTable extends Migration
         });
 
         Schema::create('products_tags', function (Blueprint $table) {
-            $table->integer('product_id')->unsigned();
+            $table->unsignedInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
 
-            $table->integer('tag_id')->unsigned();
+            $table->unsignedInteger('tag_id');
             $table->foreign('tag_id')->references('id')->on('tags');
 
             $table->timestamps();

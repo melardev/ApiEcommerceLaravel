@@ -174,7 +174,7 @@ class ProductController extends BaseController
             $productImage = ProductImage::create([
                 'product_id' => $product->id,
                 'file_name' => explode('/', $filepath)[1],
-                'file_path' => '/storage/' . $filepath,
+                'file_path' => './storage/' . $filepath,
                 'original_name' => $image->getClientOriginalName()
             ]);
         }
