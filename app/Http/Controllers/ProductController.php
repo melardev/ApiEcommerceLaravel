@@ -118,7 +118,8 @@ class ProductController extends BaseController
 
     public function store(Request $request)
     {
-
+        $imagesCount = count($request->only('images')['images']);
+        $imagesCount = min(0, $imagesCount - 1);
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
             // 'slug' => 'required|alpha_dash|min:5|max:255|unique:products,slug',
@@ -174,12 +175,65 @@ class ProductController extends BaseController
             $productImage = ProductImage::create([
                 'product_id' => $product->id,
                 'file_name' => explode('/', $filepath)[1],
-                'file_path' => './storage/' . $filepath,
+                'file_path' => '/storage/' . $filepath,
                 'original_name' => $image->getClientOriginalName()
             ]);
         }
+        
 
         return $this->sendSuccessResponse(ProductDetailsDto::build($product), 'Created successfully');
     }
+
+
+    //delete product by id..................................................................................................
+    public function destroy($id)
+{
+    $product = Product::find($id);
+
+    if (!$product) {
+        return $this->sendError('Product not found');
+    }
+
+    // Check authorization to delete the product
+    // You might want to implement a policy or custom logic here
+    // to ensure that only authorized users can delete products
+
+    // Delete related images
+    $product->images()->delete();
+
+    // Detach tags and categories
+    $product->tags()->detach();
+    $product->categories()->detach();
+
+    // Delete the product
+    $product->delete();
+
+    return $this->sendSuccessResponse(null, 'Product deleted successfully');
+}
+
+
+
+//...................................update...........................................................
+// ---- Updating the product -------------------
+
+public function update(Request $request, $id)
+{
+    $product = Product::find($id);
+
+    if (!$product) {
+        return $this->sendError('Product not found');
+    }
+
+    // Update the product fields based on the request data
+    $product->name = $request->input('name', $product->name);
+    $product->description = $request->input('description', $product->description);
+    $product->price = $request->input('price', $product->price);
+    $product->stock = $request->input('stock', $product->stock);
+
+    // Save the updated product
+    $product->save();
+
+    return $this->sendSuccessResponse(ProductDetailsDto::build($product), 'Product updated successfully');
+}
 
 }
